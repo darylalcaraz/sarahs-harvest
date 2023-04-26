@@ -4,7 +4,7 @@
 
 session_start();
 
-if(!isset($_SESSION['user_name'])){
+if(!isset($_SESSION['admin_name'])){
     header('location:login.php');
 }
 
@@ -29,48 +29,49 @@ if(!isset($_SESSION['user_name'])){
 </head>
 <body>
    
-   <nav class="navbar navbar-expand-lg navbar-white bg-light py-3 fixed-top">
-   <div class="container-fluid">
-      <a href="user_index.php"><img class="img-responsive" src="img/sharvest.png"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-white bg-light py-3 fixed-top">
+        <div class="container-fluid">
+            <a href="user_index.php"><img class="img-responsive" src="img/sharvest.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
 
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-            <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="user_index.php">Home</a>
-            </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="user_index.php">Home</a>
+                    </li>
 
-            <li class="nav-item">
-               <a class="nav-link" href="menu.php">Menu</a>
-            </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="menu.php">Menu</a>
+                    </li>
 
-            <li class="nav-item">
-               <a class="nav-link" href="about.html">About Us</a>
-            </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                    </li>
 
-         </ul>
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0 icon">
-            <li class="nav-item icons">
-                <a href="account.php"><i class="fas fa-user"></i></a>
-                <?php
-                    $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('Query failed');
-                    $row_count = mysqli_num_rows($select_rows);
-                ?>
-                <a href="cart.php"><i class="fas fa-shopping-bag"> <span><?php echo $row_count; ?></span></i></a>
-            </li>
-         </ul>
-      </div>
-   </div>
-   </nav>
+                </ul>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 icon">
+                    <li class="nav-item icons">
+                        <a href="account.php"><i class="fas fa-user"></i></a>
+                        <?php
+                            $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('Query failed');
+                            $row_count = mysqli_num_rows($select_rows);
+                        ?>
+                        <a href="cart.php"><i class="fas fa-shopping-bag"> <span><?php echo $row_count; ?></span></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
    <div class="container">
 
       <div class="content">
-         <h3>User Page</h3>
+         <h1>My Account</h1>
+         <h3>Welcome, <span><?php echo $_SESSION['admin_name'] ?>!</span></h3>
          <a href="logout.php" class="btn">Log Out</a>
       </div>
    </div>

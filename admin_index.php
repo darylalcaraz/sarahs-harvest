@@ -19,11 +19,9 @@ if(isset($_POST['add_product'])){
 
     if($insert_query){
         move_uploaded_file($p_image_tmp_name, $p_image_folder);
-        $message[] = 'Product added succesfully';
-        header('location:admin_index.php');
+        $success_msg[] = 'Product added succesfully';
     }else{
-        $message[] = 'Could not add the product';
-        header('location:admin_index.php');
+        $warning_msg[] = 'Could not add the product';
     };
 };
 
@@ -31,11 +29,9 @@ if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('Query failed');
     if($delete_query){
-        $message[] = 'Product has been deleted';
-        header('location:admin_index.php');
+        $success_msg[] = 'Product has been deleted';
     }else{
-        $message[] = 'Product could not be deleted';
-        header('location:admin_index.php');
+        $warning_msg[] = 'Product could not be deleted';
     };
 };
 
@@ -69,6 +65,7 @@ if(isset($_POST['update_product'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>ADMIN - Sarah's Harvest</title>
+   <link rel="shortcut icon" href="img/sharvestfav.png" type="image/x-icon">
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
@@ -109,7 +106,7 @@ if(isset($message)){
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="menu.php">Menu</a>
+                    <a class="nav-link" href="orders.php">Orders</a>
                     </li>
 
                     <li class="nav-item">
@@ -119,8 +116,8 @@ if(isset($message)){
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 icon">
                     <li class="nav-item icons">
-                        <a href="#"><i class="fas fa-user"></i></a>
-                        <a href="cart.php"><i class="fas fa-shopping-bag"> <span>0</span></i></a>
+                        <a href="admin_account.php"><i class="fas fa-user"></i></a>
+                        <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
                     </li>
                 </ul>
             </div>
@@ -166,10 +163,10 @@ if(isset($message)){
                         ?>
 
                         <tr>
-                            <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
-                            <td><?php echo $row['name']; ?></td>
-                            <td>₱<?php echo $row['price']; ?>/-</td>
-                            <td>
+                            <td class="first-data"><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
+                            <td class="second-data"><?php echo $row['name']; ?></td>
+                            <td class="third-data">₱<?php echo $row['price']; ?>/-</td>
+                            <td class="fourth-data">
                                 <a href="admin_index.php?delete=<?php echo $row['id'];?>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash"></i> Delete </a>
                                 <a href="admin_index.php?edit=<?php echo $row['id'];?>" class="option-btn"><i class="fas fa-edit"></i> Update </a>
                             </td>
@@ -189,6 +186,7 @@ if(isset($message)){
 
             <!-- A separate form that contains all the information you can edit in a specific product -->
             <section class="edit-form-container">
+
                 <?php
                 
                 if(isset($_GET['edit'])){
@@ -223,18 +221,18 @@ if(isset($message)){
         <div class="row">
             <div class="col-lg-3 col-sm-6 first">
                 <div class="single-box">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium aspernatur iure molestias.</p>
-                <img src="img/sharvestwhite.png" style="max-height: 100%; max-width: 100%; margin-top:10%;">
+                <p>Philippines' pre-packed fresh vegetable salads and healthy food options perfect for any occasion!</p>
+                <img src="img/sharvestwhite.png" style="max-height: 100%; max-width: 100%; margin-top:5%;">
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 second">
                 <div class="single-box">
                     <h2>Products</h2>
                 <ul>
-                    <li><a href="#">Salads</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Salads + Sandwiches Combo</a></li>
-                    <li><a href="#">Rice Meals</a></li>
+                    <li><a href="menu.php">Salads</a></li>
+                    <li><a href="menu.php">Sandwiches</a></li>
+                    <li><a href="menu.php">Salads + Sandwiches Combo</a></li>
+                    <li><a href="menu.php">Rice Meals</a></li>
                 </ul>
                 </div>                    
             </div>
@@ -264,7 +262,9 @@ if(isset($message)){
     </footer>
 
 <script src="js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
+<?php include 'alert.php'; ?>
 </body>
 </html>
