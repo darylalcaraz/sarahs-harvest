@@ -123,18 +123,18 @@ if(isset($_GET['delete_all'])){
                     ?>
 
                     <tr>
-                        <td><img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
-                        <td><?php echo $fetch_cart['name']; ?></td>
-                        <td>₱<?php echo ($fetch_cart['price']); ?></td>
-                        <td>
+                        <td class="one"><img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
+                        <td class="two"><?php echo $fetch_cart['name']; ?></td>
+                        <td class="three">₱<?php echo ($fetch_cart['price']); ?></td>
+                        <td class="four">
                             <form action="" method="post">
                                 <input type="hidden" name="update_quantity_id"  value="<?php echo $fetch_cart['id']; ?>" >
                                 <input type="number" name="update_quantity" min="1"  value="<?php echo $fetch_cart['quantity']; ?>" >
                                 <input type="submit" value="Update" name="edit_update_btn">
                             </form>   
                         </td>
-                        <td>₱<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></td>
-                        <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('Remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> Remove</a></td>
+                        <td class="five">₱<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></td>
+                        <td class="six"><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('Remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> Remove</a></td>
                     </tr>
 
                     <?php

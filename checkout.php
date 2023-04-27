@@ -124,7 +124,7 @@ if(isset($_POST['place_order'])){
     <div class="row">
 
         <form action="" method="POST">
-            <h3 style="color:#508143;">Billing Details</h3>
+            <h3 style="color:#386641;">Billing Details</h3>
             <div class="flex">
                 <div class="box">
                 <p>Your name <span>*</span></p>

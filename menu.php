@@ -44,6 +44,10 @@ if(isset($_POST['add_cart'])){
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        body{background-color: #F2E9E4 !important;}
+    </style>
+
 </head>
 <body>
 

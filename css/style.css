@@ -30,7 +30,7 @@
 }
 
 .container .content h3 span{
-   background: #2F751D;
+   background: #386641;
    color:#fff;
    border-radius: 5px;
    padding:0 15px;
@@ -61,7 +61,7 @@
 }
 
 .container .content .btn:hover{
-   background: #2F751D;
+   background: #386641;
 }
 
 .form-container{
@@ -111,14 +111,14 @@
 
 .form-container form .form-btn{
    background: #E8F9E4;
-   color: #2F751D;
+   color: #386641;
    text-transform: capitalize;
    font-size: 20px;
    cursor: pointer;
 }
 
 .form-container form .form-btn:hover{
-   background: #2F751D;
+   background: #386641;
    color:#fff;
 }
 
@@ -129,7 +129,7 @@
 }
 
 .form-container form p a{
-   color: #2F751D;
+   color: #386641;
 }
 
 .form-container form .error-msg{
@@ -174,7 +174,7 @@
 .navbar i:hover, 
 .navbar-white .navbar-nav .nav-link.active
 .navbar i:hover{
-   color: #2F751D;
+   color: #386641;
 }
 
 .navbar-white .navbar-nav a{
@@ -184,7 +184,7 @@
 .navbar-white .navbar-nav span{
    padding: .45rem .35rem;
    border-radius: .5rem;
-   background-color: #2F751D;
+   background-color: #386641;
    color: white;
    font-size: 1rem;
 }
@@ -355,7 +355,7 @@ footer {
 }
 
 .second a:hover{
-   color: #2F751D;
+   color: #386641;
    transition: 0.4s ease;
 }
 
@@ -364,7 +364,7 @@ footer {
 }
 
 .third a:hover{
-   color: #2F751D;
+   color: #386641;
    transition: 0.4s ease;
 }
 
@@ -399,7 +399,7 @@ section {
    display: block;
    width: 100%;
    text-align: center;
-   background-color: #2F751D;
+   background-color: #386641;
    color: white;
    font-size: 1.7rem;
    padding: 1.2rem 3rem;
@@ -411,13 +411,13 @@ section {
 .btn:hover,
 .option-btn:hover,
 .delete-btn:hover{
-   background-color: #245a16;
+   background-color: #234129;
    color: white;
    transition: 0.4s ease;
 }
 
 .option-btn{
-   background-color: #2F751D;
+   background-color: #386641;
 }
 
 .delete-btn{
@@ -441,7 +441,7 @@ section {
 }
 
 .message{
-   background-color: #2F751D;
+   background-color: #386641;
    position: sticky;
    top: 0; left: 0;
    z-index: 10000;
@@ -514,7 +514,7 @@ section {
 .product-table table thead th{
    padding: 1.5rem;
    font-size: 2rem;
-   background-color: #2F751D;
+   background-color: #386641;
    color: white;
 }
 
@@ -554,7 +554,7 @@ section {
 }
 
 .product-table .option-btn:hover{
-   background-color: #245a16;
+   background-color: #234129;
    transition: 0.4s ease;
 }
 
@@ -617,8 +617,9 @@ section {
    padding: 2rem;
    padding-bottom: 8rem;
    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-   border: .1rem solid #999;
+   border: .1rem solid #386641;
    height: 100%;
+   background-color: #eee;
 }
 
 .products .box-container .box h3{
@@ -639,6 +640,12 @@ section {
 .products .box-container .btnz .btn{
    margin-top: -15%;
    border-radius: 0%;
+   background-color: #386641;
+}
+
+.products .box-container .btnz .btn:hover{
+   background-color: #234129;
+   transition: 0.4s ease;
 }
 
 .products .box-container .box .price{
@@ -664,7 +671,7 @@ section {
    padding: 1.5rem;
    font-size: 2rem;
    color: #fff;
-   background-color: #2F751D;
+   background-color: #386641;
 }
 
 .food-cart table tr td{
@@ -677,23 +684,39 @@ section {
 
 .food-cart table input[type="number"]{
    border: .1rem solid #999;
-   padding: .5rem 2rem;
+   padding: .45rem 1rem;
    font-size: 2rem;
    color: #333;   
-   width: 10rem;
+   width: 4rem;
 }
 
 .food-cart table input[type="submit"]{
    padding: .5rem 1.25rem;
    cursor: pointer;
    font-size: 2rem;
-   background-color: #2F751D;
+   background-color: #386641;
    color: #fff;
 }
 
 .food-cart table input[type="submit"]:hover{
-   background-color: #245a16;
+   background-color: #234129;
    transition: 0.4s ease;
+}
+
+.food-cart .two{
+   width: 20%;
+}
+
+.food-cart .four{
+   width: 15%;
+}
+
+.food-cart .six{
+   width: 20%;
+}
+
+.food-cart .tbot .btn{
+   max-width: 85%;
 }
 
 .food-cart .btn{
@@ -748,6 +771,7 @@ section {
    padding:2.5rem 2rem;
    max-width: 1800px;
    margin: 0 auto;
+   margin-bottom: 5%;
 }
 
 .checkout .row{
@@ -856,7 +880,7 @@ section {
 
 .checkout .row .summary .flex .price{
    font-size: 1.7rem;
-   color: #2F751D;
+   color: #386641;
 }
 
 .checkout .row .summary .grand-total{
@@ -868,7 +892,7 @@ section {
    justify-content: space-between;
    padding: 1rem 1.8rem;
    font-size: 2rem;
-   color: #2F751D;
+   color: #386641;
    text-transform: capitalize;
 }
 
@@ -900,7 +924,7 @@ section {
 }
 
 .order-message-container::-webkit-scrollbar-thumb{
-   background-color: #2F751D;
+   background-color: #386641;
 }
 
 .order-message-container .message-container{
@@ -923,8 +947,8 @@ section {
 
 .order-message-container .message-container h3{
    font-size: 2.5rem;
-   color: #2F751D;
-   font-weight: bolder;
+   color: #386641;
+   font-weight: 900;
 }
 
 .order-message-container .message-container h4{
@@ -951,7 +975,7 @@ section {
 
 .order-message-container .message-container .order-detail span.total{
    display: block;
-   background: #2F751D;
+   background: #386641;
    color: #fff;
 }
 
@@ -962,15 +986,17 @@ section {
 .order-message-container .message-container .customer-details p{
    padding:1rem 0;
    font-size: 2rem;
-   color: #333;
+   color: #386641;
    text-align: left;
+   font-weight: bolder;
 }
 
 .order-message-container .message-container .customer-details p span{
-   color: #2F751D;
+   color: #333;
    padding:0 .5rem;
    text-align: left;
    text-transform: none;
+   font-weight: 400;
 }
 
 .order-message-container .message-container .customer-details .btn{
@@ -1017,7 +1043,7 @@ section {
 .order-table table thead th{
    padding: 1.5rem;
    font-size: 1.5rem;
-   background-color: #245a16;
+   background-color: #386641;
    color: white;
 }
 
@@ -1033,7 +1059,7 @@ section {
 }
 
 .order-table table td span{
-   color: #245a16;
+   color: #386641;
    font-weight: bolder;
 }
 
@@ -1059,7 +1085,7 @@ section {
 }
 
 .order-table .option-btn:hover{
-   background-color: #245a16;
+   background-color: #234129;
    transition: 0.4s ease;
 }
 

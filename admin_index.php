@@ -92,7 +92,7 @@ if(isset($message)){
     <nav class="navbar navbar-expand-lg navbar-white bg-light py-3 fixed-top">
         <div class="container-fluid">
 
-            <a href="user_index.php"><img class="img-responsive" src="img/sharvest.png"></a>
+            <a href="admin_index.php"><img class="img-responsive" src="img/sharvest.png"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -110,14 +110,14 @@ if(isset($message)){
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
+                    <a class="nav-link" href="#">About Us</a>
                     </li>
 
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 icon">
                     <li class="nav-item icons">
                         <a href="admin_account.php"><i class="fas fa-user"></i></a>
-                        <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
+                        <a href="#"><i class="fas fa-shopping-bag"></i></a>
                     </li>
                 </ul>
             </div>
