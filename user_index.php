@@ -67,13 +67,66 @@ if(!isset($_SESSION['user_name'])){
    </nav>
 
 
-   <div class="container">
+    <!-- advert 1 -->
+    <div class="container1">
+        <section class="ad_section">
+            <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="detail-box">
+                <h1>
+                Sarah's Harvest
+                </h1>
+                <p>
+                Philippines' freshest sandwiches and salads for every occasion. Our dishes are made daily with the finest ingredients, perfect for your office lunch, family gatherings, and more!
+                </p>
+                    <div class="btn-box">
+                    <a href= "menu.php">
+                        Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="img-box">
+                    <img src="img/adsalad.png">
+                </div>
+            </div>
+            </div>
+        </section>
+    </div>
 
-      <div class="content">
-         <h3>User Page</h3>
-         <a href="logout.php" class="btn">Log Out</a>
-      </div>
-   </div>
+    <!-- end advert 1 -->
+
+    <!-- advert 2 -->
+
+    <div class="container2">
+        <section class="ad_section2">
+            <div class="row">
+                <div class="col-12 col-md-6" style="background-color: #386641">
+                    <div class="img-box">
+                    <img src="img/adsandwich.jpg">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6" style="background-color: #386641">
+                    <div class="detail-box">
+                    <h1>
+                        About Us
+                    </h1>
+                    <p>Since 2018, we've been crafting delicious and healthy salads and sandwiches that nourish your body and satisfy your taste buds. Our mission is to make healthy eating a delight, one flavorful bite at a time.</p>
+                    <p class="line2">Healthy, fresh, and delicious - bite into happiness!</p>
+                    <div class="btn-box">
+                        <a href="about.html">
+                            Learn More
+                        </a>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- end advert 2 -->
 
    <!-- Footer -->
    <footer>
