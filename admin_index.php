@@ -1,13 +1,17 @@
 <?php
 
+// establishes connection between this file and the config.php file
 @include 'config.php';
 
+// starts the admin's session
 session_start();
 
+// log out statement
 if(!isset($_SESSION['admin_name'])){
     header('location:login.php');
 }
 
+// statement to add additional products to the database
 if(isset($_POST['add_product'])){
     $p_name = $_POST['p_name'];
     $p_price = $_POST['p_price'];
@@ -25,6 +29,7 @@ if(isset($_POST['add_product'])){
     };
 };
 
+// statement to delete products from the database
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('Query failed');
@@ -35,6 +40,7 @@ if(isset($_GET['delete'])){
     };
 };
 
+// statement to update product's price, image, or name and reflect it on the database
 if(isset($_POST['update_product'])){
     $update_p_id = $_POST['update_p_id'];
     $update_p_name = $_POST['update_p_name'];
@@ -165,7 +171,7 @@ if(isset($message)){
                         <tr>
                             <td class="first-data"><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
                             <td class="second-data"><?php echo $row['name']; ?></td>
-                            <td class="third-data">₱<?php echo $row['price']; ?>/-</td>
+                            <td class="third-data">₱<?php echo $row['price']; ?></td>
                             <td class="fourth-data">
                                 <a href="admin_index.php?delete=<?php echo $row['id'];?>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash"></i> Delete </a>
                                 <a href="admin_index.php?edit=<?php echo $row['id'];?>" class="option-btn"><i class="fas fa-edit"></i> Update </a>

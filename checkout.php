@@ -1,9 +1,12 @@
 <?php
 
+// establishes connection between this file and the config.php file
 @include 'config.php';
 
+// receive and reflect the information submitted by a user to the checkout form
 if(isset($_POST['place_order'])){
 
+    // containers for the submitted information
     $name = $_POST['name'];
     $number = $_POST['number'];
     $email = $_POST['email'];
@@ -17,6 +20,8 @@ if(isset($_POST['place_order'])){
 
     $cart_query = mysqli_query($conn, "SELECT * FROM `cart`");
     $product_total = 0;
+
+    // statement to insert the submitted information into the orders database
     if(mysqli_num_rows($cart_query) > 0){
         while($product_item = mysqli_fetch_assoc($cart_query)){
             $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
@@ -28,6 +33,7 @@ if(isset($_POST['place_order'])){
     $total_product = implode(', ', $product_name);
     $detail_query = mysqli_query($conn, "INSERT INTO `orders` (name, number, email, method, address_type, flat, street, city, country, pin_code, total_products, total_price) VALUES('$name','$number','$email','$method', '$address_type', '$flat','$street','$city','$country','$pin_code','$total_product','$price_total')") or die('Query failed');
 
+    // statement to display the orders information of the user that was queried from the database
     if($cart_query && $detail_query){
         echo "
         <div class='order-message-container'>

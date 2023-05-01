@@ -1,13 +1,17 @@
 <?php
 
+// establishes connection between this file and the config.php file
 @include 'config.php';
 
+// starts the admin's session
 session_start();
 
+// logout statement
 if(!isset($_SESSION['admin_name'])){
     header('location:login.php');
 }
 
+// statement for deleting cancelled orders
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     $delete_query = mysqli_query($conn, "DELETE FROM `orders` WHERE id = $delete_id ") or die('Query failed');
@@ -18,6 +22,7 @@ if(isset($_GET['delete'])){
     };
 };
 
+// statement for completed orders
 if(isset($_GET['edit'])){
     $delete_id = $_GET['edit'];
     $delete_query = mysqli_query($conn, "DELETE FROM `orders` WHERE id = $delete_id ") or die('Query failed');

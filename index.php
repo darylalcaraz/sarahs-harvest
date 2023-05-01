@@ -1,7 +1,9 @@
 <?php
 
+// establishes connection between this file and the config.php file
 @include 'config.php';
 
+// submits the inputted data to the database and selects the right table container for each data submitted
 if(isset($_POST['submit'])){
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -14,6 +16,7 @@ if(isset($_POST['submit'])){
 
     $result = mysqli_query($conn, $select);
 
+    // the submitted information is placed into each table containers assuming the inputs are valid
     if(mysqli_num_rows($result) > 0) {
         
         $error[] = 'User already exist';

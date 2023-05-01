@@ -29,6 +29,7 @@ if(!isset($_SESSION['admin_name'])){
 </head>
 <body>
    
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-white bg-light py-3 fixed-top">
         <div class="container-fluid">
             <a href="admin_index.php"><img class="img-responsive" src="img/sharvest.png"></a>
@@ -66,7 +67,7 @@ if(!isset($_SESSION['admin_name'])){
         </div>
     </nav>
 
-
+    <!-- Information about the admin + Logout Button -->
    <div class="container">
 
       <div class="content">

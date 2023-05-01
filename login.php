@@ -1,9 +1,12 @@
 <?php
 
+// establishes connection between this file and the config.php file
 @include 'config.php';
 
+// starts the session of any user of the system
 session_start();
 
+// submits the inputted data to the database
 if(isset($_POST['submit'])){
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -16,6 +19,7 @@ if(isset($_POST['submit'])){
 
     $result = mysqli_query($conn, $select);
 
+    // authenticates the login information by comparing the inputed data from the information in the database
     if(mysqli_num_rows($result) > 0) {
         
         $row = mysqli_fetch_array($result);

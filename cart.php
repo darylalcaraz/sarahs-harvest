@@ -4,6 +4,7 @@ session_start();
 
 @include 'config.php';
 
+// updates the quantity of the product in the cart database after pressing the button
 if(isset($_POST['edit_update_btn'])){
     $update_value = $_POST['update_quantity'];
     $update_id = $_POST['update_quantity_id'];
@@ -13,12 +14,14 @@ if(isset($_POST['edit_update_btn'])){
     };
 };
 
+// removes a specific product in the cart database after pressing the button
 if(isset($_GET['remove'])){
     $remove_id = $_GET['remove'];
     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$remove_id'");
     header('location:cart.php');
  };
- 
+
+// removes all products in the cart database after pressing the button
 if(isset($_GET['delete_all'])){
     mysqli_query($conn, "DELETE FROM `cart`");
     header('location:cart.php');
@@ -116,6 +119,7 @@ if(isset($_GET['delete_all'])){
 
                     <?php 
                     
+                    // selects all items that were added to the cart database
                     $select_cart = mysqli_query($conn, "SELECT * FROM `cart`");
                     $grand_total = 0;
                     if(mysqli_num_rows($select_cart) > 0){
@@ -123,17 +127,21 @@ if(isset($_GET['delete_all'])){
                     ?>
 
                     <tr>
+                        <!-- displays the image and information of a specific item that were added to cart -->
                         <td class="one"><img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
                         <td class="two"><?php echo $fetch_cart['name']; ?></td>
                         <td class="three">₱<?php echo ($fetch_cart['price']); ?></td>
                         <td class="four">
+                            <!-- button to update the quantity of the product inside the cart -->
                             <form action="" method="post">
                                 <input type="hidden" name="update_quantity_id"  value="<?php echo $fetch_cart['id']; ?>" >
                                 <input type="number" name="update_quantity" min="1"  value="<?php echo $fetch_cart['quantity']; ?>" >
                                 <input type="submit" value="Update" name="edit_update_btn">
                             </form>   
                         </td>
+                        <!-- displays the amount of each products listed -->
                         <td class="five">₱<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></td>
+                        <!-- delete button to remove products from cart -->
                         <td class="six"><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('Remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> Remove</a></td>
                     </tr>
 
@@ -143,9 +151,12 @@ if(isset($_GET['delete_all'])){
                     };
                     ?>
                     <tr class="tbot">
+                        <!-- return back to menu page -->
                         <td><a href="menu.php" class="btn" style="margin-top: 0;">Continue shopping</a></td>
+                        <!-- displays the total amount of all products in the cart combined -->
                         <td colspan="3">Grand total</td>
                         <td>₱<?php echo $grand_total; ?></td>
+                        <!-- delete function to remove all products in the cart -->
                         <td><a href="cart.php?delete_all" onclick="return confirm('Are you sure you want to delete all items?');" class="delete-btn"> <i class="fas fa-trash"></i> Delete all </a></td>
                     </tr>
 
