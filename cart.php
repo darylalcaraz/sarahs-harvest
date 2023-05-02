@@ -78,7 +78,7 @@ if(isset($_GET['delete_all'])){
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                     </li>
 
                 </ul>

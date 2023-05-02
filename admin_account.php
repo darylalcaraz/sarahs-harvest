@@ -49,18 +49,18 @@ if(!isset($_SESSION['admin_name'])){
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="admin_about.php">About Us</a>
                     </li>
 
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 icon">
                     <li class="nav-item icons">
-                        <a href="account.php"><i class="fas fa-user"></i></a>
+                        <a href="admin_account.php"><i class="fas fa-user"></i></a>
                         <?php
                             $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('Query failed');
                             $row_count = mysqli_num_rows($select_rows);
                         ?>
-                        <a href="#"><i class="fas fa-shopping-bag"> <span><?php echo $row_count; ?></span></i></a>
+                        <a href="#"><i class="fas fa-shopping-bag"></i></a>
                     </li>
                 </ul>
             </div>
@@ -90,10 +90,10 @@ if(!isset($_SESSION['admin_name'])){
                     <div class="single-box">
                         <h2>Products</h2>
                     <ul>
-                        <li><a href="menu.php">Salads</a></li>
-                        <li><a href="menu.php">Sandwiches</a></li>
-                        <li><a href="menu.php">Salads + Sandwiches Combo</a></li>
-                        <li><a href="menu.php">Rice Meals</a></li>
+                        <li><a href="#">Salads</a></li>
+                        <li><a href="#">Sandwiches</a></li>
+                        <li><a href="#">Salads + Sandwiches Combo</a></li>
+                        <li><a href="#">Rice Meals</a></li>
                     </ul>
                     </div>                    
                 </div>

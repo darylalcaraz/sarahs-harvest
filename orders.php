@@ -87,7 +87,7 @@ if(isset($message)){
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="admin_about.php">About Us</a>
                     </li>
 
                 </ul>
@@ -167,10 +167,10 @@ if(isset($message)){
                 <div class="single-box">
                     <h2>Products</h2>
                 <ul>
-                    <li><a href="menu.php">Salads</a></li>
-                    <li><a href="menu.php">Sandwiches</a></li>
-                    <li><a href="menu.php">Salads + Sandwiches Combo</a></li>
-                    <li><a href="menu.php">Rice Meals</a></li>
+                    <li><a href="#">Salads</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Salads + Sandwiches Combo</a></li>
+                    <li><a href="#">Rice Meals</a></li>
                 </ul>
                 </div>                    
             </div>

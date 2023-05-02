@@ -52,7 +52,7 @@ if(!isset($_SESSION['user_name'])){
             </li>
 
             <li class="nav-item">
-               <a class="nav-link" href="about.html">About Us</a>
+               <a class="nav-link" href="about.php">About Us</a>
             </li>
 
          </ul>
@@ -119,7 +119,7 @@ if(!isset($_SESSION['user_name'])){
                     <p>Since 2018, we've been crafting delicious and healthy salads and sandwiches that nourish your body and satisfy your taste buds. Our mission is to make healthy eating a delight, one flavorful bite at a time.</p>
                     <p class="line2">Healthy, fresh, and delicious - bite into happiness!</p>
                     <div class="btn-box">
-                        <a href="about.html">
+                        <a href="about.php">
                             Learn More
                         </a>
                     </div>
